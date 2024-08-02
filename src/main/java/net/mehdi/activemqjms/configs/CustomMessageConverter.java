@@ -18,7 +18,7 @@ public class CustomMessageConverter implements MessageConverter {
         if (object instanceof net.mehdi.activemqjms.wsdlReq.Persist.Request || object instanceof net.mehdi.activemqjms.wsdlReq.PersistResponse.OutputData || object instanceof Persist.Request || object instanceof PersistResponse.OutputData) {
             return session.createObjectMessage((Serializable) object);
         }
-        throw new MessageConversionException("Object is not of type Persist.Request or PersistResponse.OutputData");
+        throw new MessageConversionException("Object is not defined ");
     }
 
     @Override

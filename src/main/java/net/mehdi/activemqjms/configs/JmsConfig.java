@@ -32,7 +32,7 @@ public class JmsConfig {
         JmsTemplate jmsTemplate = new JmsTemplate();
         jmsTemplate.setConnectionFactory(connectionFactory);
         jmsTemplate.setMessageConverter(customMessageConverter);
-        jmsTemplate.setDefaultDestinationName("defaultReplyQueue"); // Set the default reply destination
+        jmsTemplate.setDefaultDestinationName("defaultReplyQueue");
         return jmsTemplate;
     }
 
@@ -41,11 +41,6 @@ public class JmsConfig {
         return new CustomMessageConverter();
     }
 
-    /**
-     * Serialize message content to json using TextMessage
-     *
-     * @return Message Converter
-     */
     @Bean
     public JmsListenerContainerFactory<?> jmsFactory(ConnectionFactory connectionFactory,
                                                      DefaultJmsListenerContainerFactoryConfigurer configurer) {

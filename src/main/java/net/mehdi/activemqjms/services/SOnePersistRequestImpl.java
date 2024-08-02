@@ -19,10 +19,9 @@ public class SOnePersistRequestImpl implements SOnePersistRequest {
     @Override
     public PersistResponse.OutputData persist(Persist.Request request) {
         messagePublisher.sendMessage(request);
-        // On retourne une réponse simulée, la vraie réponse viendrait du consumer
         PersistResponse.OutputData response = new PersistResponse.OutputData();
         response.setCodeRetour("200");
-        response.setMessageRetour("Message envoyé au consumer");
+        response.setMessageRetour("Message send to consumer");
         return response;
     }
 }

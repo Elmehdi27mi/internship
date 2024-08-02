@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StrategyOneRequest type="">
+  <Header>
+    <InquiryCode>1</InquiryCode>
+    <ProcessCode>DPLPRESCOR</ProcessCode>
+    <OrganizationCode>01</OrganizationCode>
+  </Header>
+  <Body>
+    <RecordNR>
+      <VIN_Societe_Gestion v="SOFAC"/>
+      <Code_Identifiant v="1551065"/>
+      <VIN_Date_Demande v="2023-04-15"/>
+      <VIN_Categorie_Affaire v="PP"/>
+      <VIN_Marche v="FON"/>
+      <VIN_Segment v="CNTC"/>
+      <VIN_Profession v="P061"/>
+      <VIN_Employeur v="9201"/>
+      <VIN_Fonction v=""/>
+      <VIN_Date_Naissance v="1979-03-07"/>
+      <VIN_Montant_Demande v="10300"/>
+      <VIN_Duree v="84"/>
+      <VIN_Mensualite v="216.66"/>
+      <VIN_Taux_Interet v="0.099"/>
+      <VIN_Revenu v="3341.56"/>
+      <VIN_Charge v="1"/>      
+    </RecordNR>
+  </Body>
+</StrategyOneRequest>

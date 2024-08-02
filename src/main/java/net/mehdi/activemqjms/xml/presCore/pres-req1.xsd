@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="StrategyOneRequest" type="StrategyOneRequestType"/>
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="InquiryCode"/>
+      <xs:element type="xs:string" name="ProcessCode"/>
+      <xs:element type="xs:string" name="OrganizationCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VIN_Societe_GestionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Code_IdentifiantType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_Date_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_Categorie_AffaireType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_MarcheType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_SegmentType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_ProfessionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_EmployeurType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_FonctionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_Date_NaissanceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_Montant_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_DureeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_MensualiteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_Taux_InteretType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_RevenuType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VIN_ChargeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RecordNRPres">
+    <xs:sequence>
+      <xs:element type="VIN_Societe_GestionType" name="VIN_Societe_Gestion"/>
+      <xs:element type="Code_IdentifiantType" name="Code_Identifiant"/>
+      <xs:element type="VIN_Date_DemandeType" name="VIN_Date_Demande"/>
+      <xs:element type="VIN_Categorie_AffaireType" name="VIN_Categorie_Affaire"/>
+      <xs:element type="VIN_MarcheType" name="VIN_Marche"/>
+      <xs:element type="VIN_SegmentType" name="VIN_Segment"/>
+      <xs:element type="VIN_ProfessionType" name="VIN_Profession"/>
+      <xs:element type="VIN_EmployeurType" name="VIN_Employeur"/>
+      <xs:element type="VIN_FonctionType" name="VIN_Fonction"/>
+      <xs:element type="VIN_Date_NaissanceType" name="VIN_Date_Naissance"/>
+      <xs:element type="VIN_Montant_DemandeType" name="VIN_Montant_Demande"/>
+      <xs:element type="VIN_DureeType" name="VIN_Duree"/>
+      <xs:element type="VIN_MensualiteType" name="VIN_Mensualite"/>
+      <xs:element type="VIN_Taux_InteretType" name="VIN_Taux_Interet"/>
+      <xs:element type="VIN_RevenuType" name="VIN_Revenu"/>
+      <xs:element type="VIN_ChargeType" name="VIN_Charge"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BodyType">
+    <xs:sequence>
+      <xs:element type="RecordNRType" name="RecordNR"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StrategyOneRequestDTO">
+    <xs:sequence>
+      <xs:element type="HeaderType" name="Header"/>
+      <xs:element type="BodyType" name="Body"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+</xs:schema>

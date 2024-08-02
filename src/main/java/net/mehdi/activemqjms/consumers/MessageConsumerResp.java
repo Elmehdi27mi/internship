@@ -3,19 +3,21 @@ package net.mehdi.activemqjms.consumers;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Unmarshaller;
 import lombok.AllArgsConstructor;
-
-import net.mehdi.activemqjms.dtos.res_dtos.StrategyOneResponseDTO;
-import net.mehdi.activemqjms.entities.res_entities.RecordRRRes;
-import net.mehdi.activemqjms.entities.res_entities.StrategyOneResponse;
-import net.mehdi.activemqjms.mappers.res_mappers.RecordRRRespMapper;
-import net.mehdi.activemqjms.mappers.res_mappers.StrategyOneResponseMapper;
-import net.mehdi.activemqjms.services.StrategyOneResponseService;
+import net.mehdi.activemqjms.dtos.presCoreDTO.res_dtos.StrategyOneResponsePresResDTO;
+import net.mehdi.activemqjms.dtos.scorIntegDTO.res_dtos.StrategyOneResponseDTO;
+import net.mehdi.activemqjms.entities.presCore.res_entities.StrategyOneResponsePres;
+import net.mehdi.activemqjms.entities.scorInteg.res_entities.RecordRRRes;
+import net.mehdi.activemqjms.entities.scorInteg.res_entities.StrategyOneResponse;
+import net.mehdi.activemqjms.mappers.presCore.res_mappers.StrategyOneResponsePresMapper;
+import net.mehdi.activemqjms.mappers.scorInteg.res_mappers.RecordRRRespMapper;
+import net.mehdi.activemqjms.mappers.scorInteg.res_mappers.StrategyOneResponseMapper;
+import net.mehdi.activemqjms.services.presCore.res_service.StrategyOneResponsePresService;
+import net.mehdi.activemqjms.services.scorInteg.res_service.StrategyOneResponseService;
 import net.mehdi.activemqjms.wsdlResp.Persist;
 import net.mehdi.activemqjms.wsdlResp.PersistResponse;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 import org.xml.sax.InputSource;
-
 import java.io.StringReader;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,99 +27,87 @@ import java.util.stream.Collectors;
 public class MessageConsumerResp {
 
     private StrategyOneResponseService strategyOneResponseService;
+    private StrategyOneResponsePresService strategyOneResponsePresService;
     @JmsListener(destination = "dataQueue2")
     public PersistResponse.OutputData receiveMessage(Persist.Request request) {
         PersistResponse.OutputData outputData = new PersistResponse.OutputData();
         try {
-            // System.out.println("***************************//////////////////////////////////////////////********************************************");
+            if(!request.getScorInteg().equals("") && request.getPresCore().equals("")){
+                String xmlContent = request.getScorInteg();
+                xmlContent = xmlContent.trim();
 
-            // System.out.println("PresCore: " + request.getPresCore());
-            String xmlContent = request.getScorInteg();
-            System.out.println("ScorInteg: " + xmlContent);
-            xmlContent = xmlContent.trim();
+                if (!isValidXML(xmlContent)) {
+                    throw new Exception("Invalid XML content");
+                }
+                JAXBContext context = JAXBContext.newInstance(StrategyOneResponseDTO.class);
 
-            // Decode the escaped XML content
-            //String decodedXmlContent = unescapeXml(xmlContent);
+                Unmarshaller unmarshaller = context.createUnmarshaller();
+                StrategyOneResponseDTO strategyOneResponseDTO = (StrategyOneResponseDTO) unmarshaller.unmarshal(new StringReader(xmlContent));
+                persistXmlDataScorIneg(strategyOneResponseDTO , xmlContent);
 
-            // Validate XML content before unmarshalling
-            if (!isValidXML(xmlContent)) {
-                throw new Exception("Invalid XML content");
+                outputData.setCodeRetour("200");
+                outputData.setMessageRetour("Success : Les données de la requête sont bien stockées");
+            }else if (!request.getPresCore().equals("") && request.getScorInteg().equals("")) {
+                String xmlContent = request.getPresCore();
+                xmlContent = xmlContent.trim();
+
+                if (!isValidXML(xmlContent)) {
+                    throw new Exception("Invalid XML content");
+                }
+                JAXBContext context = JAXBContext.newInstance(StrategyOneResponsePresResDTO.class);
+
+                Unmarshaller unmarshaller = context.createUnmarshaller();
+                StrategyOneResponsePresResDTO strategyOneResponsePresResDTO = (StrategyOneResponsePresResDTO) unmarshaller.unmarshal(new StringReader(xmlContent));
+                persistXmlDataPresCore(strategyOneResponsePresResDTO , xmlContent);
+
+                outputData.setCodeRetour("200");
+                outputData.setMessageRetour("Success : Les données de la requête sont bien stockées");
+
+            }else{
+                throw  new RuntimeException("Error in requete");
             }
-            JAXBContext context = JAXBContext.newInstance(StrategyOneResponseDTO.class);
 
-            // Désérialiser le XML directement en BodyType
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            StrategyOneResponseDTO strategyOneResponseDTO = (StrategyOneResponseDTO) unmarshaller.unmarshal(new StringReader(xmlContent));
 
-            displayXmlData(strategyOneResponseDTO , xmlContent);
-            System.out.println("**************************************************");
-
-            outputData.setCodeRetour("200");
-            outputData.setMessageRetour("Success : Les données de la requête sont bien stockées");
         } catch (Exception e) {
+
             outputData.setCodeRetour("500");
             outputData.setMessageRetour("Error: " + e.getMessage());
             e.printStackTrace();
+
         }
         return outputData;
     }
 
-    private void displayXmlData(StrategyOneResponseDTO strategyOneResponseDto , String xmlContent ) {
-        //Save RecordNR
-        //  RecordNR recordNR = RecordNRMapper.toEntity(strategyOneRequestDto.getBody().getRecordNR());
-        //RecordNR recordNR1 = strategyOneRequestService.saveRecordNR(recordNR);
-        //SaveRecordRR
-//       List<RecordDTO> records = strategyOneRequestDto.getBody().getRecordRR().getRecord();
-//       for (RecordDTO recordDTO : records) {
-//            RecordRR recordRR=RecordRRMapper.toEntity(recordDTO);
-//            strategyOneRequestService.saveRecordRR(recordRR);
-//             }
-        //Save StarategyOneRequest
+    private void persistXmlDataScorIneg(StrategyOneResponseDTO strategyOneResponseDto , String xmlContent ) {
 
-        List<RecordRRRes> recordRRResList= strategyOneResponseDto.getBody().getRecordRR().getRecord().stream()
+        List<RecordRRRes> recordRRResList= strategyOneResponseDto
+                .getBody()
+                .getRecordRR()
+                .getRecord()
+                .stream()
                 .map(RecordRRRespMapper::toEntity)
                 .collect(Collectors.toList());
         StrategyOneResponse strategyOneResponse= StrategyOneResponseMapper.toEntity(strategyOneResponseDto,recordRRResList);
         strategyOneResponse.setResponseXml(xmlContent);
         strategyOneResponseService.saveStrategyOneResponseService(strategyOneResponse);
 
-        System.out.println("***************************//////////////////////////////////////////////********************************************");
-        //System.out.println(strategyOneResponse);
-
-
-
-//        RecordNR entity = RecordNRMapper.toEntity(strategyOneRequest.getBody().getRecordNR());
-//        System.out.println(entity.toString());
-//        List<RecordDTO> records = strategyOneRequest.getBody().getRecordRR().getRecord();
-//        System.out.println("***************************//////////////////////////////////////////////********************************************");
-//
-//        for (RecordDTO recordDTO : records) {
-//            RecordRR recordRR=RecordRRMapper.toEntity(recordDTO);
-//            System.out.println("***************************//////////////////////////////////////////////********************************************");
-//
-//            System.out.println(recordRR.toString());
-//            System.out.println("***************************//////////////////////////////////////////////********************************************");
-
-        //  }
+    }
+    private void persistXmlDataPresCore(StrategyOneResponsePresResDTO strategyOneResponsePresResDTO,String xmlContent){
+        System.out.println("**************************************");
+        System.out.println(strategyOneResponsePresResDTO);
+        StrategyOneResponsePres strategyOneResponsePres= StrategyOneResponsePresMapper.toEntity(strategyOneResponsePresResDTO,xmlContent);
+        strategyOneResponsePresService.saveStartegyOneResponseService(strategyOneResponsePres);
+        System.out.println(strategyOneResponsePres);
+        System.out.println("//////////////////////////////////////////////////////////////////////////");
     }
 
     private boolean isValidXML(String xmlContent) {
         try {
-            // Try parsing the XML content
             javax.xml.parsers.DocumentBuilderFactory.newInstance().newDocumentBuilder()
                     .parse(new InputSource(new StringReader(xmlContent)));
             return true;
         } catch (Exception e) {
-            // Invalid XML content
             return false;
         }
-    }
-
-    private String unescapeXml(String escapedXml) {
-        return escapedXml.replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&amp;", "&")
-                .replace("&quot;", "\"")
-                .replace("&apos;", "'");
     }
 }

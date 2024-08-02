@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://strategyone.ws.sofac.ma" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="StrategyOneRequest" type="str:StrategyOneRequestType" xmlns:str="http://strategyone.ws.sofac.ma"/>
+  <xs:complexType name="StrategyOneRequestDTO">
+    <xs:sequence>
+      <xs:element ref="Header"/>
+      <xs:element ref="Body"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+</xs:schema>

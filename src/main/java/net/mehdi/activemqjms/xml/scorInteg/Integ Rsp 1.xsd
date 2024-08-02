@@ -1,0 +1,2201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="StrategyOneResponse" type="StrategyOneResponseType"/>
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="InquiryCode"/>
+      <xs:element type="xs:string" name="ProcessCode"/>
+      <xs:element type="xs:string" name="OrganizationCode"/>
+      <xs:element type="xs:string" name="ProcessVersion"/>
+      <xs:element type="xs:string" name="LayoutVersion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Societe_GestionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Date_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Code_AgenceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Random_NumberType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Numero_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Categorie_AffaireType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Montant_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Duree_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Mensualite_DemandeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Flag_GarantieType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_NUM_LANCEMENTType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_ALIGNEDType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_OBJCODEType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_RAWType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NOTATION_FINType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NOTATION_FIN_0_100Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NOTATION_HOMType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NOTATION_HOM_0_100Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Score_RATType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Note_Score_OP_PMType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Score_OPType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ScoratingType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_0Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_0Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_0Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_1Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_1Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_1Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_2Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_2Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_2Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_3Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_3Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_3Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_4Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_4Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_4Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_5Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_5Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_5Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_6Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_6Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_6Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_7Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_7Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_7Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_8Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_8Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_8Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_9Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_9Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_9Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_10Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_10Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_10Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_11Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_11Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_11Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_12Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_12Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_12Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_13Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_13Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_13Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_14Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_14Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_14Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_15Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_15Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_15Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_16Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_16Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_16Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_17Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_17Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_17Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_18Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_18Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_18Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_19Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_19Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_19Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Variable_20Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Classe_affectee_var_20Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GRILLE_Note_var_20Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_CoherenceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_ScoreType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Output_ReglesType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Output_Regles_Forcage_ABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Decision_FinaleType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Decision_Finale_Forcage_ABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Niveau_PouvoirType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Code_Niveau_PouvoirType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Decision_Proposition_AjusteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Montant_AjusteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Mensualite_AjusteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Duree_AjusteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Anciennete_Activite_EntrType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Taux_ApportType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Age_VehiculeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_Client_FUTURType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Age_Vehicule_DureeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_001Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_001Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_002Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_002Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_003Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_003Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_003_ForcageABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_003_ForcageABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_004Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_004Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_004_ForcageABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_004_ForcageABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_005Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_005Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_006Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_006Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_007Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_007Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_008Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_008Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_009Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_009Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_051Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_051Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_052Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_052Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_053Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_053Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_054Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_054Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_055Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_055Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_056Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_056Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_057Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_057Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_058Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_058Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_059Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_059Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_SO_060Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_SO_060Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RecordNRPres">
+    <xs:sequence>
+      <xs:element type="VOUT_Societe_GestionType" name="VOUT_Societe_Gestion"/>
+      <xs:element type="VOUT_Date_DemandeType" name="VOUT_Date_Demande"/>
+      <xs:element type="VOUT_Code_AgenceType" name="VOUT_Code_Agence"/>
+      <xs:element type="VOUT_Random_NumberType" name="VOUT_Random_Number"/>
+      <xs:element type="VOUT_Numero_DemandeType" name="VOUT_Numero_Demande"/>
+      <xs:element type="VOUT_Categorie_AffaireType" name="VOUT_Categorie_Affaire"/>
+      <xs:element type="VOUT_Montant_DemandeType" name="VOUT_Montant_Demande"/>
+      <xs:element type="VOUT_Duree_DemandeType" name="VOUT_Duree_Demande"/>
+      <xs:element type="VOUT_Mensualite_DemandeType" name="VOUT_Mensualite_Demande"/>
+      <xs:element type="VOUT_Flag_GarantieType" name="VOUT_Flag_Garantie"/>
+      <xs:element type="VOUT_NUM_LANCEMENTType" name="VOUT_NUM_LANCEMENT"/>
+      <xs:element type="GRILLE_ALIGNEDType" name="GRILLE_ALIGNED"/>
+      <xs:element type="GRILLE_OBJCODEType" name="GRILLE_OBJCODE"/>
+      <xs:element type="GRILLE_RAWType" name="GRILLE_RAW"/>
+      <xs:element type="NOTATION_FINType" name="NOTATION_FIN"/>
+      <xs:element type="NOTATION_FIN_0_100Type" name="NOTATION_FIN_0_100"/>
+      <xs:element type="NOTATION_HOMType" name="NOTATION_HOM"/>
+      <xs:element type="NOTATION_HOM_0_100Type" name="NOTATION_HOM_0_100"/>
+      <xs:element type="Score_RATType" name="Score_RAT"/>
+      <xs:element type="Note_Score_OP_PMType" name="Note_Score_OP_PM"/>
+      <xs:element type="Score_OPType" name="Score_OP"/>
+      <xs:element type="ScoratingType" name="Scorating"/>
+      <xs:element type="GRILLE_Variable_0Type" name="GRILLE_Variable_0"/>
+      <xs:element type="GRILLE_Classe_affectee_var_0Type" name="GRILLE_Classe_affectee_var_0"/>
+      <xs:element type="GRILLE_Note_var_0Type" name="GRILLE_Note_var_0"/>
+      <xs:element type="GRILLE_Variable_1Type" name="GRILLE_Variable_1"/>
+      <xs:element type="GRILLE_Classe_affectee_var_1Type" name="GRILLE_Classe_affectee_var_1"/>
+      <xs:element type="GRILLE_Note_var_1Type" name="GRILLE_Note_var_1"/>
+      <xs:element type="GRILLE_Variable_2Type" name="GRILLE_Variable_2"/>
+      <xs:element type="GRILLE_Classe_affectee_var_2Type" name="GRILLE_Classe_affectee_var_2"/>
+      <xs:element type="GRILLE_Note_var_2Type" name="GRILLE_Note_var_2"/>
+      <xs:element type="GRILLE_Variable_3Type" name="GRILLE_Variable_3"/>
+      <xs:element type="GRILLE_Classe_affectee_var_3Type" name="GRILLE_Classe_affectee_var_3"/>
+      <xs:element type="GRILLE_Note_var_3Type" name="GRILLE_Note_var_3"/>
+      <xs:element type="GRILLE_Variable_4Type" name="GRILLE_Variable_4"/>
+      <xs:element type="GRILLE_Classe_affectee_var_4Type" name="GRILLE_Classe_affectee_var_4"/>
+      <xs:element type="GRILLE_Note_var_4Type" name="GRILLE_Note_var_4"/>
+      <xs:element type="GRILLE_Variable_5Type" name="GRILLE_Variable_5"/>
+      <xs:element type="GRILLE_Classe_affectee_var_5Type" name="GRILLE_Classe_affectee_var_5"/>
+      <xs:element type="GRILLE_Note_var_5Type" name="GRILLE_Note_var_5"/>
+      <xs:element type="GRILLE_Variable_6Type" name="GRILLE_Variable_6"/>
+      <xs:element type="GRILLE_Classe_affectee_var_6Type" name="GRILLE_Classe_affectee_var_6"/>
+      <xs:element type="GRILLE_Note_var_6Type" name="GRILLE_Note_var_6"/>
+      <xs:element type="GRILLE_Variable_7Type" name="GRILLE_Variable_7"/>
+      <xs:element type="GRILLE_Classe_affectee_var_7Type" name="GRILLE_Classe_affectee_var_7"/>
+      <xs:element type="GRILLE_Note_var_7Type" name="GRILLE_Note_var_7"/>
+      <xs:element type="GRILLE_Variable_8Type" name="GRILLE_Variable_8"/>
+      <xs:element type="GRILLE_Classe_affectee_var_8Type" name="GRILLE_Classe_affectee_var_8"/>
+      <xs:element type="GRILLE_Note_var_8Type" name="GRILLE_Note_var_8"/>
+      <xs:element type="GRILLE_Variable_9Type" name="GRILLE_Variable_9"/>
+      <xs:element type="GRILLE_Classe_affectee_var_9Type" name="GRILLE_Classe_affectee_var_9"/>
+      <xs:element type="GRILLE_Note_var_9Type" name="GRILLE_Note_var_9"/>
+      <xs:element type="GRILLE_Variable_10Type" name="GRILLE_Variable_10"/>
+      <xs:element type="GRILLE_Classe_affectee_var_10Type" name="GRILLE_Classe_affectee_var_10"/>
+      <xs:element type="GRILLE_Note_var_10Type" name="GRILLE_Note_var_10"/>
+      <xs:element type="GRILLE_Variable_11Type" name="GRILLE_Variable_11"/>
+      <xs:element type="GRILLE_Classe_affectee_var_11Type" name="GRILLE_Classe_affectee_var_11"/>
+      <xs:element type="GRILLE_Note_var_11Type" name="GRILLE_Note_var_11"/>
+      <xs:element type="GRILLE_Variable_12Type" name="GRILLE_Variable_12"/>
+      <xs:element type="GRILLE_Classe_affectee_var_12Type" name="GRILLE_Classe_affectee_var_12"/>
+      <xs:element type="GRILLE_Note_var_12Type" name="GRILLE_Note_var_12"/>
+      <xs:element type="GRILLE_Variable_13Type" name="GRILLE_Variable_13"/>
+      <xs:element type="GRILLE_Classe_affectee_var_13Type" name="GRILLE_Classe_affectee_var_13"/>
+      <xs:element type="GRILLE_Note_var_13Type" name="GRILLE_Note_var_13"/>
+      <xs:element type="GRILLE_Variable_14Type" name="GRILLE_Variable_14"/>
+      <xs:element type="GRILLE_Classe_affectee_var_14Type" name="GRILLE_Classe_affectee_var_14"/>
+      <xs:element type="GRILLE_Note_var_14Type" name="GRILLE_Note_var_14"/>
+      <xs:element type="GRILLE_Variable_15Type" name="GRILLE_Variable_15"/>
+      <xs:element type="GRILLE_Classe_affectee_var_15Type" name="GRILLE_Classe_affectee_var_15"/>
+      <xs:element type="GRILLE_Note_var_15Type" name="GRILLE_Note_var_15"/>
+      <xs:element type="GRILLE_Variable_16Type" name="GRILLE_Variable_16"/>
+      <xs:element type="GRILLE_Classe_affectee_var_16Type" name="GRILLE_Classe_affectee_var_16"/>
+      <xs:element type="GRILLE_Note_var_16Type" name="GRILLE_Note_var_16"/>
+      <xs:element type="GRILLE_Variable_17Type" name="GRILLE_Variable_17"/>
+      <xs:element type="GRILLE_Classe_affectee_var_17Type" name="GRILLE_Classe_affectee_var_17"/>
+      <xs:element type="GRILLE_Note_var_17Type" name="GRILLE_Note_var_17"/>
+      <xs:element type="GRILLE_Variable_18Type" name="GRILLE_Variable_18"/>
+      <xs:element type="GRILLE_Classe_affectee_var_18Type" name="GRILLE_Classe_affectee_var_18"/>
+      <xs:element type="GRILLE_Note_var_18Type" name="GRILLE_Note_var_18"/>
+      <xs:element type="GRILLE_Variable_19Type" name="GRILLE_Variable_19"/>
+      <xs:element type="GRILLE_Classe_affectee_var_19Type" name="GRILLE_Classe_affectee_var_19"/>
+      <xs:element type="GRILLE_Note_var_19Type" name="GRILLE_Note_var_19"/>
+      <xs:element type="GRILLE_Variable_20Type" name="GRILLE_Variable_20"/>
+      <xs:element type="GRILLE_Classe_affectee_var_20Type" name="GRILLE_Classe_affectee_var_20"/>
+      <xs:element type="GRILLE_Note_var_20Type" name="GRILLE_Note_var_20"/>
+      <xs:element type="VOUT_CoherenceType" name="VOUT_Coherence"/>
+      <xs:element type="VOUT_ScoreType" name="VOUT_Score"/>
+      <xs:element type="VOUT_Output_ReglesType" name="VOUT_Output_Regles"/>
+      <xs:element type="VOUT_Output_Regles_Forcage_ABBType" name="VOUT_Output_Regles_Forcage_ABB"/>
+      <xs:element type="VOUT_Decision_FinaleType" name="VOUT_Decision_Finale"/>
+      <xs:element type="VOUT_Decision_Finale_Forcage_ABBType" name="VOUT_Decision_Finale_Forcage_ABB"/>
+      <xs:element type="VOUT_Niveau_PouvoirType" name="VOUT_Niveau_Pouvoir"/>
+      <xs:element type="VOUT_Code_Niveau_PouvoirType" name="VOUT_Code_Niveau_Pouvoir"/>
+      <xs:element type="VOUT_Decision_Proposition_AjusteType" name="VOUT_Decision_Proposition_Ajuste"/>
+      <xs:element type="VOUT_Montant_AjusteType" name="VOUT_Montant_Ajuste"/>
+      <xs:element type="VOUT_Mensualite_AjusteType" name="VOUT_Mensualite_Ajuste"/>
+      <xs:element type="VOUT_Duree_AjusteType" name="VOUT_Duree_Ajuste"/>
+      <xs:element type="VOUT_Anciennete_Activite_EntrType" name="VOUT_Anciennete_Activite_Entr"/>
+      <xs:element type="VOUT_Taux_ApportType" name="VOUT_Taux_Apport"/>
+      <xs:element type="VOUT_Age_VehiculeType" name="VOUT_Age_Vehicule"/>
+      <xs:element type="VOUT_Encours_Client_FUTURType" name="VOUT_Encours_Client_FUTUR"/>
+      <xs:element type="VOUT_Age_Vehicule_DureeType" name="VOUT_Age_Vehicule_Duree"/>
+      <xs:element type="RC_SO_001Type" name="RC_SO_001"/>
+      <xs:element type="RM_SO_001Type" name="RM_SO_001"/>
+      <xs:element type="RC_SO_002Type" name="RC_SO_002"/>
+      <xs:element type="RM_SO_002Type" name="RM_SO_002"/>
+      <xs:element type="RC_SO_003Type" name="RC_SO_003"/>
+      <xs:element type="RM_SO_003Type" name="RM_SO_003"/>
+      <xs:element type="RC_SO_003_ForcageABBType" name="RC_SO_003_ForcageABB"/>
+      <xs:element type="RM_SO_003_ForcageABBType" name="RM_SO_003_ForcageABB"/>
+      <xs:element type="RC_SO_004Type" name="RC_SO_004"/>
+      <xs:element type="RM_SO_004Type" name="RM_SO_004"/>
+      <xs:element type="RC_SO_004_ForcageABBType" name="RC_SO_004_ForcageABB"/>
+      <xs:element type="RM_SO_004_ForcageABBType" name="RM_SO_004_ForcageABB"/>
+      <xs:element type="RC_SO_005Type" name="RC_SO_005"/>
+      <xs:element type="RM_SO_005Type" name="RM_SO_005"/>
+      <xs:element type="RC_SO_006Type" name="RC_SO_006"/>
+      <xs:element type="RM_SO_006Type" name="RM_SO_006"/>
+      <xs:element type="RC_SO_007Type" name="RC_SO_007"/>
+      <xs:element type="RM_SO_007Type" name="RM_SO_007"/>
+      <xs:element type="RC_SO_008Type" name="RC_SO_008"/>
+      <xs:element type="RM_SO_008Type" name="RM_SO_008"/>
+      <xs:element type="RC_SO_009Type" name="RC_SO_009"/>
+      <xs:element type="RM_SO_009Type" name="RM_SO_009"/>
+      <xs:element type="RC_SO_051Type" name="RC_SO_051"/>
+      <xs:element type="RM_SO_051Type" name="RM_SO_051"/>
+      <xs:element type="RC_SO_052Type" name="RC_SO_052"/>
+      <xs:element type="RM_SO_052Type" name="RM_SO_052"/>
+      <xs:element type="RC_SO_053Type" name="RC_SO_053"/>
+      <xs:element type="RM_SO_053Type" name="RM_SO_053"/>
+      <xs:element type="RC_SO_054Type" name="RC_SO_054"/>
+      <xs:element type="RM_SO_054Type" name="RM_SO_054"/>
+      <xs:element type="RC_SO_055Type" name="RC_SO_055"/>
+      <xs:element type="RM_SO_055Type" name="RM_SO_055"/>
+      <xs:element type="RC_SO_056Type" name="RC_SO_056"/>
+      <xs:element type="RM_SO_056Type" name="RM_SO_056"/>
+      <xs:element type="RC_SO_057Type" name="RC_SO_057"/>
+      <xs:element type="RM_SO_057Type" name="RM_SO_057"/>
+      <xs:element type="RC_SO_058Type" name="RC_SO_058"/>
+      <xs:element type="RM_SO_058Type" name="RM_SO_058"/>
+      <xs:element type="RC_SO_059Type" name="RC_SO_059"/>
+      <xs:element type="RM_SO_059Type" name="RM_SO_059"/>
+      <xs:element type="RC_SO_060Type" name="RC_SO_060"/>
+      <xs:element type="RM_SO_060Type" name="RM_SO_060"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VOUT_RoleType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Type_ClientType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Identifiant_ClientType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_010Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_010Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_011Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_011Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_012Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_012Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_013Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_013Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_014Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_014Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_015Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_015Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_016Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_016Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_017Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_017Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_018Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_018Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_019Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_019Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_020Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_020Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_021Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_021Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_021_ForcageABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_021_ForcageABBType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_022Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_022Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_023Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_023Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_024Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_024Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_025Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_025Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_026Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_026Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_027Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_027Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_028Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_028Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_029Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_029Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_030Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_030Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_031Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_031Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_032Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_032Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_033Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_033Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_034Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_034Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_035Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_035Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_036Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_036Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_037Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_037Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_038Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_038Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_039Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_039Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_040Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_040Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_041Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_041Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_042Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_042Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_043Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_043Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_044Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_044Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_045Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_045Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_046Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_046Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_047Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_047Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_048Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_048Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_049Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_049Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RC_MO_050Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RM_MO_050Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_AgeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Age_Duree_PretType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Anciennete_Activite_PartType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s" use="optional"/>
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Anciennete_Tete_SocieteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s" use="optional"/>
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Anciennete_BancaireType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_SexeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Situation_LogementType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Nouveau_Client_ONType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Nbr_Impayes_12Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Minimum_VitalType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_ProfessionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_CSPType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_CSP_CodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Solde_Moyen_3moisType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Revenu_TotalType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Impaye_FlagType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Code_BanqueType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_CompenseesType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_Ancienne_AffaireType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_Client_HISTOType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_produit_PPType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_produit_EDMType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_produit_AUTOType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_produit_ASSUType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Encours_produit_MOUType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Fichage_Chequiers_EncoursType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Fichage_Chequiers_EchuType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Fichage_Chequiers_RegulariseType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Fichage_Chequiers_AnnuleType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Nbr_IncidentsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Mouvements_CrediteursType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Nbr_ImpayesType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Solde_ImpayesType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Taux_EndettementType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_TemporisationType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Montant_RevenuType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_MarcheType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_SegmentType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_EmployeurType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RecordType">
+    <xs:sequence>
+      <xs:element type="VOUT_RoleType" name="VOUT_Role"/>
+      <xs:element type="VOUT_Type_ClientType" name="VOUT_Type_Client"/>
+      <xs:element type="VOUT_Identifiant_ClientType" name="VOUT_Identifiant_Client"/>
+      <xs:element type="RC_MO_010Type" name="RC_MO_010"/>
+      <xs:element type="RM_MO_010Type" name="RM_MO_010"/>
+      <xs:element type="RC_MO_011Type" name="RC_MO_011"/>
+      <xs:element type="RM_MO_011Type" name="RM_MO_011"/>
+      <xs:element type="RC_MO_012Type" name="RC_MO_012"/>
+      <xs:element type="RM_MO_012Type" name="RM_MO_012"/>
+      <xs:element type="RC_MO_013Type" name="RC_MO_013"/>
+      <xs:element type="RM_MO_013Type" name="RM_MO_013"/>
+      <xs:element type="RC_MO_014Type" name="RC_MO_014"/>
+      <xs:element type="RM_MO_014Type" name="RM_MO_014"/>
+      <xs:element type="RC_MO_015Type" name="RC_MO_015"/>
+      <xs:element type="RM_MO_015Type" name="RM_MO_015"/>
+      <xs:element type="RC_MO_016Type" name="RC_MO_016"/>
+      <xs:element type="RM_MO_016Type" name="RM_MO_016"/>
+      <xs:element type="RC_MO_017Type" name="RC_MO_017"/>
+      <xs:element type="RM_MO_017Type" name="RM_MO_017"/>
+      <xs:element type="RC_MO_018Type" name="RC_MO_018"/>
+      <xs:element type="RM_MO_018Type" name="RM_MO_018"/>
+      <xs:element type="RC_MO_019Type" name="RC_MO_019"/>
+      <xs:element type="RM_MO_019Type" name="RM_MO_019"/>
+      <xs:element type="RC_MO_020Type" name="RC_MO_020"/>
+      <xs:element type="RM_MO_020Type" name="RM_MO_020"/>
+      <xs:element type="RC_MO_021Type" name="RC_MO_021"/>
+      <xs:element type="RM_MO_021Type" name="RM_MO_021"/>
+      <xs:element type="RC_MO_021_ForcageABBType" name="RC_MO_021_ForcageABB"/>
+      <xs:element type="RM_MO_021_ForcageABBType" name="RM_MO_021_ForcageABB"/>
+      <xs:element type="RC_MO_022Type" name="RC_MO_022"/>
+      <xs:element type="RM_MO_022Type" name="RM_MO_022"/>
+      <xs:element type="RC_MO_023Type" name="RC_MO_023"/>
+      <xs:element type="RM_MO_023Type" name="RM_MO_023"/>
+      <xs:element type="RC_MO_024Type" name="RC_MO_024"/>
+      <xs:element type="RM_MO_024Type" name="RM_MO_024"/>
+      <xs:element type="RC_MO_025Type" name="RC_MO_025"/>
+      <xs:element type="RM_MO_025Type" name="RM_MO_025"/>
+      <xs:element type="RC_MO_026Type" name="RC_MO_026"/>
+      <xs:element type="RM_MO_026Type" name="RM_MO_026"/>
+      <xs:element type="RC_MO_027Type" name="RC_MO_027"/>
+      <xs:element type="RM_MO_027Type" name="RM_MO_027"/>
+      <xs:element type="RC_MO_028Type" name="RC_MO_028"/>
+      <xs:element type="RM_MO_028Type" name="RM_MO_028"/>
+      <xs:element type="RC_MO_029Type" name="RC_MO_029"/>
+      <xs:element type="RM_MO_029Type" name="RM_MO_029"/>
+      <xs:element type="RC_MO_030Type" name="RC_MO_030"/>
+      <xs:element type="RM_MO_030Type" name="RM_MO_030"/>
+      <xs:element type="RC_MO_031Type" name="RC_MO_031"/>
+      <xs:element type="RM_MO_031Type" name="RM_MO_031"/>
+      <xs:element type="RC_MO_032Type" name="RC_MO_032"/>
+      <xs:element type="RM_MO_032Type" name="RM_MO_032"/>
+      <xs:element type="RC_MO_033Type" name="RC_MO_033"/>
+      <xs:element type="RM_MO_033Type" name="RM_MO_033"/>
+      <xs:element type="RC_MO_034Type" name="RC_MO_034"/>
+      <xs:element type="RM_MO_034Type" name="RM_MO_034"/>
+      <xs:element type="RC_MO_035Type" name="RC_MO_035"/>
+      <xs:element type="RM_MO_035Type" name="RM_MO_035"/>
+      <xs:element type="RC_MO_036Type" name="RC_MO_036"/>
+      <xs:element type="RM_MO_036Type" name="RM_MO_036"/>
+      <xs:element type="RC_MO_037Type" name="RC_MO_037"/>
+      <xs:element type="RM_MO_037Type" name="RM_MO_037"/>
+      <xs:element type="RC_MO_038Type" name="RC_MO_038"/>
+      <xs:element type="RM_MO_038Type" name="RM_MO_038"/>
+      <xs:element type="RC_MO_039Type" name="RC_MO_039"/>
+      <xs:element type="RM_MO_039Type" name="RM_MO_039"/>
+      <xs:element type="RC_MO_040Type" name="RC_MO_040"/>
+      <xs:element type="RM_MO_040Type" name="RM_MO_040"/>
+      <xs:element type="RC_MO_041Type" name="RC_MO_041"/>
+      <xs:element type="RM_MO_041Type" name="RM_MO_041"/>
+      <xs:element type="RC_MO_042Type" name="RC_MO_042"/>
+      <xs:element type="RM_MO_042Type" name="RM_MO_042"/>
+      <xs:element type="RC_MO_043Type" name="RC_MO_043"/>
+      <xs:element type="RM_MO_043Type" name="RM_MO_043"/>
+      <xs:element type="RC_MO_044Type" name="RC_MO_044"/>
+      <xs:element type="RM_MO_044Type" name="RM_MO_044"/>
+      <xs:element type="RC_MO_045Type" name="RC_MO_045"/>
+      <xs:element type="RM_MO_045Type" name="RM_MO_045"/>
+      <xs:element type="RC_MO_046Type" name="RC_MO_046"/>
+      <xs:element type="RM_MO_046Type" name="RM_MO_046"/>
+      <xs:element type="RC_MO_047Type" name="RC_MO_047"/>
+      <xs:element type="RM_MO_047Type" name="RM_MO_047"/>
+      <xs:element type="RC_MO_048Type" name="RC_MO_048"/>
+      <xs:element type="RM_MO_048Type" name="RM_MO_048"/>
+      <xs:element type="RC_MO_049Type" name="RC_MO_049"/>
+      <xs:element type="RM_MO_049Type" name="RM_MO_049"/>
+      <xs:element type="RC_MO_050Type" name="RC_MO_050"/>
+      <xs:element type="RM_MO_050Type" name="RM_MO_050"/>
+      <xs:element type="VOUT_AgeType" name="VOUT_Age"/>
+      <xs:element type="VOUT_Age_Duree_PretType" name="VOUT_Age_Duree_Pret"/>
+      <xs:element type="VOUT_Anciennete_Activite_PartType" name="VOUT_Anciennete_Activite_Part"/>
+      <xs:element type="VOUT_Anciennete_Tete_SocieteType" name="VOUT_Anciennete_Tete_Societe"/>
+      <xs:element type="VOUT_Anciennete_BancaireType" name="VOUT_Anciennete_Bancaire"/>
+      <xs:element type="VOUT_SexeType" name="VOUT_Sexe"/>
+      <xs:element type="VOUT_Situation_LogementType" name="VOUT_Situation_Logement"/>
+      <xs:element type="VOUT_Nouveau_Client_ONType" name="VOUT_Nouveau_Client_ON"/>
+      <xs:element type="VOUT_Nbr_Impayes_12Type" name="VOUT_Nbr_Impayes_12"/>
+      <xs:element type="VOUT_Minimum_VitalType" name="VOUT_Minimum_Vital"/>
+      <xs:element type="VOUT_ProfessionType" name="VOUT_Profession"/>
+      <xs:element type="VOUT_CSPType" name="VOUT_CSP"/>
+      <xs:element type="VOUT_CSP_CodeType" name="VOUT_CSP_Code"/>
+      <xs:element type="VOUT_Solde_Moyen_3moisType" name="VOUT_Solde_Moyen_3mois"/>
+      <xs:element type="VOUT_Revenu_TotalType" name="VOUT_Revenu_Total"/>
+      <xs:element type="VOUT_Impaye_FlagType" name="VOUT_Impaye_Flag"/>
+      <xs:element type="VOUT_Code_BanqueType" name="VOUT_Code_Banque"/>
+      <xs:element type="VOUT_Encours_CompenseesType" name="VOUT_Encours_Compensees"/>
+      <xs:element type="VOUT_Encours_Ancienne_AffaireType" name="VOUT_Encours_Ancienne_Affaire"/>
+      <xs:element type="VOUT_Encours_Client_HISTOType" name="VOUT_Encours_Client_HISTO"/>
+      <xs:element type="VOUT_Encours_produit_PPType" name="VOUT_Encours_produit_PP"/>
+      <xs:element type="VOUT_Encours_produit_EDMType" name="VOUT_Encours_produit_EDM"/>
+      <xs:element type="VOUT_Encours_produit_AUTOType" name="VOUT_Encours_produit_AUTO"/>
+      <xs:element type="VOUT_Encours_produit_ASSUType" name="VOUT_Encours_produit_ASSU"/>
+      <xs:element type="VOUT_Encours_produit_MOUType" name="VOUT_Encours_produit_MOU"/>
+      <xs:element type="VOUT_Fichage_Chequiers_EncoursType" name="VOUT_Fichage_Chequiers_Encours"/>
+      <xs:element type="VOUT_Fichage_Chequiers_EchuType" name="VOUT_Fichage_Chequiers_Echu"/>
+      <xs:element type="VOUT_Fichage_Chequiers_RegulariseType" name="VOUT_Fichage_Chequiers_Regularise"/>
+      <xs:element type="VOUT_Fichage_Chequiers_AnnuleType" name="VOUT_Fichage_Chequiers_Annule"/>
+      <xs:element type="VOUT_Nbr_IncidentsType" name="VOUT_Nbr_Incidents"/>
+      <xs:element type="VOUT_Mouvements_CrediteursType" name="VOUT_Mouvements_Crediteurs"/>
+      <xs:element type="VOUT_Nbr_ImpayesType" name="VOUT_Nbr_Impayes"/>
+      <xs:element type="VOUT_Solde_ImpayesType" name="VOUT_Solde_Impayes"/>
+      <xs:element type="VOUT_Taux_EndettementType" name="VOUT_Taux_Endettement"/>
+      <xs:element type="VOUT_TemporisationType" name="VOUT_Temporisation"/>
+      <xs:element type="VOUT_Montant_RevenuType" name="VOUT_Montant_Revenu"/>
+      <xs:element type="VOUT_MarcheType" name="VOUT_Marche"/>
+      <xs:element type="VOUT_SegmentType" name="VOUT_Segment"/>
+      <xs:element type="VOUT_EmployeurType" name="VOUT_Employeur"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RecordRRType">
+    <xs:sequence>
+      <xs:element type="RecordType" name="Record" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BodyType">
+    <xs:sequence>
+      <xs:element type="RecordNRType" name="RecordNR"/>
+      <xs:element type="RecordRRType" name="RecordRR"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StrategyOneResponseRespDTO">
+    <xs:sequence>
+      <xs:element type="HeaderType" name="Header"/>
+      <xs:element type="BodyType" name="Body"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+</xs:schema>

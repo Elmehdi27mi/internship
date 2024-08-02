@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="StrategyOneResponse" type="StrategyOneResponseType"/>
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="InquiryCode"/>
+      <xs:element type="xs:string" name="ProcessCode"/>
+      <xs:element type="xs:string" name="OrganizationCode"/>
+      <xs:element type="xs:string" name="ProcessVersion"/>
+      <xs:element type="xs:string" name="LayoutVersion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VOUT_Societe_GestionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Code_IdentifiantType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FLAG_Coherance_MarcheType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_MarcheType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_SegmentType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_ProfessionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="s"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_FonctionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_RevenuType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VOUT_ChargeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Decision_Offre_MaxType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Capacite_ENDType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Offre_MaxType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Duree_MaxType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Mensualite_Offre_MaxType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="v"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RecordNRPresResDTO">
+    <xs:sequence>
+      <xs:element type="VOUT_Societe_GestionType" name="VOUT_Societe_Gestion"/>
+      <xs:element type="Code_IdentifiantType" name="Code_Identifiant"/>
+      <xs:element type="FLAG_Coherance_MarcheType" name="FLAG_Coherance_Marche"/>
+      <xs:element type="VOUT_MarcheType" name="VOUT_Marche"/>
+      <xs:element type="VOUT_SegmentType" name="VOUT_Segment"/>
+      <xs:element type="VOUT_ProfessionType" name="VOUT_Profession"/>
+      <xs:element type="VOUT_FonctionType" name="VOUT_Fonction"/>
+      <xs:element type="VOUT_RevenuType" name="VOUT_Revenu"/>
+      <xs:element type="VOUT_ChargeType" name="VOUT_Charge"/>
+      <xs:element type="Decision_Offre_MaxType" name="Decision_Offre_Max"/>
+      <xs:element type="Capacite_ENDType" name="Capacite_END"/>
+      <xs:element type="Offre_MaxType" name="Offre_Max"/>
+      <xs:element type="Duree_MaxType" name="Duree_Max"/>
+      <xs:element type="Mensualite_Offre_MaxType" name="Mensualite_Offre_Max"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BodyType">
+    <xs:sequence>
+      <xs:element type="RecordNRType" name="RecordNR"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StrategyOneResponsePresResDTO">
+    <xs:sequence>
+      <xs:element type="HeaderType" name="Header"/>
+      <xs:element type="BodyType" name="Body"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+</xs:schema>
