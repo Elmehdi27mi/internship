@@ -70,7 +70,5 @@ public class RecordNRPres {
 
     @Column(name = "VIN_TAUX_INTERET", nullable = false)
     private Double vinTauxInteret;
-
-
 }
 

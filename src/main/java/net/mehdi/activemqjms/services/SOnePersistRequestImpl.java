@@ -18,10 +18,16 @@ public class SOnePersistRequestImpl implements SOnePersistRequest {
 
     @Override
     public PersistResponse.OutputData persist(Persist.Request request) {
-        messagePublisher.sendMessage(request);
         PersistResponse.OutputData response = new PersistResponse.OutputData();
-        response.setCodeRetour("200");
-        response.setMessageRetour("Message send to consumer");
+        try {
+            messagePublisher.sendMessage(request);
+            response.setCodeRetour("200");
+            response.setMessageRetour("Message sent to consumer");
+        } catch (Exception e) {
+            response.setCodeRetour("500");
+            response.setMessageRetour("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
         return response;
     }
 }

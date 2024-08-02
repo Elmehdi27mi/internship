@@ -18,6 +18,7 @@ import net.mehdi.activemqjms.wsdlReq.PersistResponse;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 import org.xml.sax.InputSource;
+
 import java.io.StringReader;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,85 +27,79 @@ import java.util.stream.Collectors;
 @Component
 public class MessageConsumer {
 
-    private StrategyOneRequestService strategyOneRequestService;
-    private StrategyOneRequestPresService strategyOneRequestServiceScorInteg;
+    private final StrategyOneRequestService strategyOneRequestService;
+    private final StrategyOneRequestPresService strategyOneRequestPresService;
 
     @JmsListener(destination = "dataQueue")
     public PersistResponse.OutputData receiveMessage(Persist.Request request) {
         PersistResponse.OutputData outputData = new PersistResponse.OutputData();
+
         try {
-
-            if(!request.getScorInteg().equals("") && request.getPresCore().equals("")){
-                String xmlContentScorInteg = request.getScorInteg();
-                xmlContentScorInteg = xmlContentScorInteg.trim();
-
-                if (!isValidXML(xmlContentScorInteg)) {
-                    throw new Exception("Invalid XML content");
-                }
-                JAXBContext context = JAXBContext.newInstance(StrategyOneRequestDTO.class);
-                Unmarshaller unmarshaller = context.createUnmarshaller();
-                StrategyOneRequestDTO strategyOneRequest = (StrategyOneRequestDTO) unmarshaller.unmarshal(new StringReader(xmlContentScorInteg));
-                persistXmlDataScorIneg(strategyOneRequest , xmlContentScorInteg);
-                outputData.setCodeRetour("200");
-                outputData.setMessageRetour("Success : Les données de la requête sont bien stockées");
-            } else if (!request.getPresCore().equals("") && request.getScorInteg().equals("")) {
-                String xmlContentScorInteg = request.getPresCore();
-                xmlContentScorInteg = xmlContentScorInteg.trim();
-
-                if (!isValidXML(xmlContentScorInteg)) {
-                    throw new Exception("Invalid XML content");
-                }
-                JAXBContext context = JAXBContext.newInstance(StrategyOneRequestPresDTO.class);
-                Unmarshaller unmarshaller = context.createUnmarshaller();
-                StrategyOneRequestPresDTO strategyOneRequest = (StrategyOneRequestPresDTO) unmarshaller.unmarshal(new StringReader(xmlContentScorInteg));
-                persistXmlDataPresCore(strategyOneRequest , xmlContentScorInteg);
-                outputData.setCodeRetour("200");
-                outputData.setMessageRetour("Success : Les données de la requête sont bien stockées");
-
-            }else{
-                throw  new RuntimeException("Error in requete");
+            if (!request.getScorInteg().isEmpty() && request.getPresCore().isEmpty()) {
+                processScorIntegRequest(request.getScorInteg(), outputData);
+            } else if (!request.getPresCore().isEmpty() && request.getScorInteg().isEmpty()) {
+                processPresCoreRequest(request.getPresCore(), outputData);
+            } else {
+                throw new IllegalArgumentException("Invalid request: both ScorInteg and PresCore are provided or missing.");
             }
-
-
         } catch (Exception e) {
-
             outputData.setCodeRetour("500");
             outputData.setMessageRetour("Error: " + e.getMessage());
             e.printStackTrace();
-
         }
+
         return outputData;
     }
 
-    private void persistXmlDataScorIneg(StrategyOneRequestDTO strategyOneRequestDto , String xmlContent ) {
-        System.out.println("**************************************");
-
-        System.out.println(strategyOneRequestDto);
-       List<RecordRR> recordRRList= strategyOneRequestDto
-               .getBody()
-               .getRecordRR()
-               .getRecord()
-               .stream()
-               .map(RecordRRMapper::toEntity)
-               .collect(Collectors.toList());
-         StrategyOneRequest strategyOneRequest=StrategyOneRequestMapper.toEntity(strategyOneRequestDto,recordRRList);
-         strategyOneRequest.setRequestXml(xmlContent);
-         strategyOneRequestService.saveStrategyOneRequestService(strategyOneRequest);
-            System.out.println(strategyOneRequest);
+    private void processScorIntegRequest(String xmlContent, PersistResponse.OutputData outputData) throws Exception {
+        xmlContent = xmlContent.trim();
+        if (!isValidXML(xmlContent)) {
+            throw new Exception("Invalid XML content for ScorInteg");
         }
 
+        JAXBContext context = JAXBContext.newInstance(StrategyOneRequestDTO.class);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        StrategyOneRequestDTO strategyOneRequestDto = (StrategyOneRequestDTO) unmarshaller.unmarshal(new StringReader(xmlContent));
+        persistXmlDataScorInteg(strategyOneRequestDto, xmlContent);
 
-    private void persistXmlDataPresCore(StrategyOneRequestPresDTO strategyOneRequestDto , String xmlContent ) {
-        System.out.println("**************************************");
-        System.out.println(strategyOneRequestDto);
-        StrategyOneRequestPres strategyOneRequestPres = StrategyOneRequestPresMapper.toEntity(strategyOneRequestDto,xmlContent);
-        strategyOneRequestServiceScorInteg.saveStrategyOneRequestService(strategyOneRequestPres);
-        System.out.println(strategyOneRequestPres);
-        System.out.println("//////////////////////////////////////////////////////////////////////////");
+        outputData.setCodeRetour("200");
+        outputData.setMessageRetour("Success: Les données de la requête ScorInteg sont bien stockées");
     }
 
+    private void processPresCoreRequest(String xmlContent, PersistResponse.OutputData outputData) throws Exception {
+        xmlContent = xmlContent.trim();
+        if (!isValidXML(xmlContent)) {
+            throw new Exception("Invalid XML content for PresCore");
+        }
 
+        JAXBContext context = JAXBContext.newInstance(StrategyOneRequestPresDTO.class);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        StrategyOneRequestPresDTO strategyOneRequestDto = (StrategyOneRequestPresDTO) unmarshaller.unmarshal(new StringReader(xmlContent));
+        persistXmlDataPresCore(strategyOneRequestDto, xmlContent);
 
+        outputData.setCodeRetour("200");
+        outputData.setMessageRetour("Success: Les données de la requête PresCore sont bien stockées");
+    }
+
+    private void persistXmlDataScorInteg(StrategyOneRequestDTO strategyOneRequestDto, String xmlContent) {
+        List<RecordRR> recordRRList = strategyOneRequestDto.getBody()
+                .getRecordRR()
+                .getRecord()
+                .stream()
+                .map(RecordRRMapper::toEntity)
+                .collect(Collectors.toList());
+        StrategyOneRequest strategyOneRequest = StrategyOneRequestMapper.toEntity(strategyOneRequestDto, recordRRList);
+        strategyOneRequest.setRequestXml(xmlContent);
+        strategyOneRequestService.saveStrategyOneRequestService(strategyOneRequest);
+
+        System.out.println("Les données de la requête ScorInteg sont bien stockées ." );
+    }
+
+    private void persistXmlDataPresCore(StrategyOneRequestPresDTO strategyOneRequestDto, String xmlContent) {
+        StrategyOneRequestPres strategyOneRequestPres = StrategyOneRequestPresMapper.toEntity(strategyOneRequestDto, xmlContent);
+        strategyOneRequestPresService.saveStrategyOneRequestService(strategyOneRequestPres);
+        System.out.println("Les données de la requête PresCore sont bien stockées ." );
+    }
 
     private boolean isValidXML(String xmlContent) {
         try {
@@ -115,6 +110,4 @@ public class MessageConsumer {
             return false;
         }
     }
-    /* <![CDATA[ */
-    /* ]]> */
 }
