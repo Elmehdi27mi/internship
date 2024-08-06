@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
-import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
@@ -19,47 +18,35 @@ import jakarta.jms.ConnectionFactory;
 public class JmsConfig {
 
     @Bean
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(ConnectionFactory connectionFactory, CustomMessageConverter customMessageConverter) {
+    public DefaultJmsListenerContainerFactory defaultJmsListenerContainerFactory(ConnectionFactory connectionFactory,
+                                                                                 DefaultJmsListenerContainerFactoryConfigurer configurer) {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);
-        factory.setMessageConverter(customMessageConverter);
-        factory.setErrorHandler(errorHandler());
-        return factory;
-    }
-
-    @Bean
-    public JmsTemplate jmsTemplate(ConnectionFactory connectionFactory, CustomMessageConverter customMessageConverter) {
-        JmsTemplate jmsTemplate = new JmsTemplate();
-        jmsTemplate.setConnectionFactory(connectionFactory);
-        jmsTemplate.setMessageConverter(customMessageConverter);
-        jmsTemplate.setDefaultDestinationName("defaultReplyQueue");
-        return jmsTemplate;
-    }
-
-    @Bean
-    public CustomMessageConverter customMessageConverter() {
-        return new CustomMessageConverter();
-    }
-
-    @Bean
-    public JmsListenerContainerFactory<?> jmsFactory(ConnectionFactory connectionFactory,
-                                                     DefaultJmsListenerContainerFactoryConfigurer configurer) {
-        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         factory.setMessageConverter(jacksonJmsMessageConverter());
+        factory.setErrorHandler(defaultErrorHandler());
         configurer.configure(factory, connectionFactory);
         return factory;
+    }
+
+    @Bean
+    public JmsTemplate jmsTemplate(ConnectionFactory connectionFactory) {
+        JmsTemplate jmsTemplate = new JmsTemplate();
+        jmsTemplate.setConnectionFactory(connectionFactory);
+        jmsTemplate.setMessageConverter(jacksonJmsMessageConverter());
+        jmsTemplate.setDefaultDestinationName("defaultReplyQueue");
+        return jmsTemplate;
     }
 
     @Bean
     public MessageConverter jacksonJmsMessageConverter() {
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);
-        converter.setTypeIdPropertyName("_asb_");
+        converter.setTypeIdPropertyName("_type");
         return converter;
     }
 
     @Bean
-    public ErrorHandler errorHandler() {
+    public ErrorHandler defaultErrorHandler() {
         return t -> {
             System.err.println("An error has occurred in the transaction");
             t.printStackTrace();

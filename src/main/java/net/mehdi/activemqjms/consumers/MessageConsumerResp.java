@@ -35,13 +35,16 @@ public class MessageConsumerResp {
         PersistResponse.OutputData outputData = new PersistResponse.OutputData();
 
         try {
-            if (!request.getScorInteg().isEmpty() && request.getPresCore().isEmpty()) {
+            if (request.getScorInteg() != null && !request.getScorInteg().isEmpty() &&
+                    (request.getPresCore() == null || request.getPresCore().isEmpty())) {
                 processScorIntegResponse(request.getScorInteg(), outputData);
-            } else if (!request.getPresCore().isEmpty() && request.getScorInteg().isEmpty()) {
+            } else if (request.getPresCore() != null && !request.getPresCore().isEmpty() &&
+                    (request.getScorInteg() == null || request.getScorInteg().isEmpty())) {
                 processPresCoreResponse(request.getPresCore(), outputData);
             } else {
                 throw new IllegalArgumentException("Invalid request: both ScorInteg and PresCore are provided or missing.");
             }
+
         } catch (Exception e) {
             outputData.setCodeRetour("500");
             outputData.setMessageRetour("Error: " + e.getMessage());
